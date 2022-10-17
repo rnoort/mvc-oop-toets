@@ -3,9 +3,9 @@
     define("DB_HOST", "localhost");
     define("DB_USER", "root");
     define("DB_PASS", "");
-    define("DB_NAME", "mvc");
+    define("DB_NAME", "mvc-oop-toets");
 
     define("APPROOT", dirname(dirname(__FILE__)));
-    define("URLROOT", "http://mvc-framework.nl");
+    define("URLROOT", "http://mvc-oop-toets.nl");
     define("SITENAME", "MVC");
 ?>
