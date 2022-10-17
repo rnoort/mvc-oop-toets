@@ -7,16 +7,14 @@
     <title>Countries</title>
 </head>
 <body>
-    <h1>Countries ofzo</h1>
-    <?= $data["title"]; ?>
+    <h1><?= $data["title"]; ?></h1>
 
     <table>
         <thead>
-            <th>Land</th>
-            <th>Hoofdstad</th>
-            <th>Continent</th>
-            <th>Inwonersaantal</th>
-            <th>Bijwerken</th>
+            <th>Naam</th>
+            <th>Vermogen</th>
+            <th>Leeftijd</th>
+            <th>Bedrijf</th>
             <th>Verwijder</th>
         </thead>
         <tbody>

@@ -1,16 +1,16 @@
 <?php
-    class Countries extends Controller
+    class RichestPeoples extends Controller
     {
 
-        private $countryModel;
+        private $richestPeopleModel;
         public function __construct()
         {
-            $this->countryModel = $this->model("Country");
+            $this->richestPeopleModel = $this->model("RichestPeople");
         }
 
-        public function index($land = null, $age = null)
+        public function index()
         {
-            $records = $this->countryModel->getCountries();
+            $records = $this->richestPeopleModel->getAll();
 
             $rows = '';
 
@@ -18,20 +18,19 @@
             {
                 $rows .= "<tr>
                             <td>$value->Name</td>
-                            <td>$value->CapitalCity</td>
-                            <td>$value->Continent</td>
-                            <td>$value->Population</td>
-                            <td><a href='" . URLROOT . "/countries/update/$value->id'>Bijwerken</a></td>
-                            <td><a href='" . URLROOT . "/countries/delete/$value->id'>Verwijder</a></td>
+                            <td>$value->Networth</td>
+                            <td>$value->Age</td>
+                            <td>$value->MyCompany</td>
+                            <td><a href='" . URLROOT . "/richestpeoples/delete/$value->Id'>Verwijder</a></td>
                 </tr>"; 
             }
 
             $data = [
-                "title" => "Landen van de wereld",
+                "title" => "De vijf rijkste mensen ter wereld",
                 "rows" => $rows
             ];
 
-            $this->view("countries/index", $data);
+            $this->view("richestpeoples/index", $data);
         }
 
         public function update($id = null)
