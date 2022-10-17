@@ -14,4 +14,11 @@
             $result = $this->db->resultSet();
             return $result;
         }
+
+        public function delete($id)
+        {
+            $this->db->query("DELETE FROM RichestPeople WHERE id = :id");
+            $this->db->bind(":id", $id, PDO::PARAM_INT);
+            return $this->db->execute();
+        }
     }

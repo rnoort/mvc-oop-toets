@@ -33,6 +33,15 @@
             $this->view("richestpeoples/index", $data);
         }
 
+        public function delete($id = null)
+        {
+            $this->richestPeopleModel->delete($id);
+            $data = [
+                "message" => "De record is verwijderd!"
+            ];
+            $this->view("richestpeoples/delete", $data);
+        }
+
         public function update($id = null)
         {
             if($_SERVER["REQUEST_METHOD"] == "POST")
