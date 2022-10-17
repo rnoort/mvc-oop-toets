@@ -8,5 +8,9 @@
 </head>
 <body>
     <h1><?= $data["message"]; ?></h1>
+
 </body>
 </html>
+
+<?php
+    header("Location: http://mvc-oop-toets.nl/richestpeoples/index; Refresh: 5");
