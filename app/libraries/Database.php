@@ -31,33 +31,26 @@
 
         public function bind($param, $value, $type = null)
         { 
-            echo "Test" . $type ."<br>";
             switch($value)
             {
                 case is_int($value):
                     $type = PDO::PARAM_INT;
-                    echo "int";
                     break;
                 case is_bool($value):
                     $type = PDO::PARAM_BOOL;
-                    echo "bool";
                     break;
                 case is_null($value):
                     $type = PDO::PARAM_NULL;
-                    echo "nul";
                     break;
                 default:                    
                     $type = PDO::PARAM_STR;
-                    echo "default";
                     break;
             } 
-            echo $type;
             $this->statement->bindValue($param, $value, $type);
         }
 
         public function execute()
         {
-            var_dump($this->statement);
             return $this->statement->execute();
         }
         public function resultSet()
